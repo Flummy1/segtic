@@ -14,6 +14,7 @@ from segtic import Field, Form, parse_many
 
 # --- Form definitions --------------------------------------------------------
 
+
 class TelegramStars(Form):
     qty: int = Field(suffix=('звёзд', 'stars'))
     auth: str = Field(clean=True)
@@ -72,9 +73,6 @@ results = parse_many(TITLES, FORMS)
 width = max(len(t) for t in TITLES)
 print(f'{"Title":<{width}}   Result')
 print('-' * (width + 40))
-for title, result in zip(TITLES, results):
-    if result is None:
-        label = '—  (no match)'
-    else:
-        label = f'{type(result).__name__}  {result}'
+for title, result in zip(TITLES, results, strict=True):
+    label = '—  (no match)' if result is None else f'{type(result).__name__}  {result}'
     print(f'{title:<{width}}   {label}')

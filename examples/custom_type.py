@@ -10,10 +10,10 @@ Run:
     python examples/custom_type.py
 """
 
-from segtic import Field, Form, register_kind, register_type
-
+from segtic import Form, register_kind, register_type
 
 # --- 1. Define the custom Python type ----------------------------------------
+
 
 class IPv4:
     """Minimal IPv4 address wrapper."""
@@ -33,6 +33,7 @@ class IPv4:
 
 # --- 2. Register the kind (matcher + coercer) --------------------------------
 
+
 def _ipv4_match(s: str, spec) -> bool:  # type: ignore[no-untyped-def]
     try:
         IPv4(s)
@@ -40,8 +41,10 @@ def _ipv4_match(s: str, spec) -> bool:  # type: ignore[no-untyped-def]
     except ValueError:
         return False
 
+
 def _ipv4_coerce(s: str, spec) -> IPv4:  # type: ignore[no-untyped-def]
     return IPv4(s)
+
 
 register_kind('ipv4', matcher=_ipv4_match, coercer=_ipv4_coerce)
 
@@ -53,10 +56,12 @@ register_type(lambda tp: ('ipv4', (), {}) if tp is IPv4 else None)
 
 # --- 4. Use the type in a Form -----------------------------------------------
 
+
 class ServerRecord(Form):
     host: IPv4
     port: int
     label: str | None = None
+
 
 print(ServerRecord.parse('10.0.0.1, 8080'))
 # ServerRecord(host=IPv4('10.0.0.1'), port=8080, label=None)
