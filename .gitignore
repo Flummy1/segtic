@@ -1,0 +1,50 @@
+# Claude Code instructions — never commit
+CLAUDE.md
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+MANIFEST
+pip-wheel-metadata/
+*.whl
+*.tar.gz
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+
+# Type checkers & linters
+.mypy_cache/
+.ruff_cache/
+.pytype/
+
+# Editors & IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Logs & temp
+*.log
+*.tmp

@@ -1,0 +1,54 @@
+# TelegramStars — suffix 'звёзд', greedy user field
+50 звёзд, по логину, @nick
+100 stars, @user, extra info
+200 звёзд, по номеру, @user123
+500 stars, login, @shop, gift for friend
+1000 звёзд, telegram login, @biguser
+
+# Topup — optional promo present and absent
+Steam, 500 руб.
+Origin, 1000 руб.
+Xbox, 750 руб., SALE2026
+PlayStation, 2000 руб., PROMO
+Nintendo, 500 руб.
+
+# TopupReverse — amount first
+1000 руб., NEWYEAR
+500 руб., Steam
+2000 руб., Epic Games
+300 руб., Google Play
+
+# Boost — greedy description swallows multiple segments
+boost, 70 lvl, mythic+, USD, $250, 3 дн.
+arena, 2200 rating, USD, $150, 5 дн.
+mythic plus, 10/10, EUR, $800, 14 дн.
+leveling 1-60, RUB, $50, 3 дн.
+
+# FxRate — comma as decimal point
+USD/RUB, 95,42 ₽
+EUR/RUB, 105,30 ₽
+GBP/RUB, 120,00 ₽
+CNY/RUB, 12,50 ₽
+
+# Region — emoji decoration stripped by clean=True
+🇷🇺 RU, 5
+🇺🇸 USA ⭐, 10
+RU ⭐, 20
+🌎 USA, 3
+
+# WowChar — pipe separator, both factions
+Stormrage | Alliance | 70
+Silvermoon | Horde | 60
+Twisting Nether | Horde | 80
+Doomhammer | Alliance | 60
+
+# Triple — plain str/str/int
+foo, bar, 42
+alpha, beta, 99
+hello, world, 1
+one, two, 100
+
+# Negative — must not match any form (ratchet floor stays valid)
+one, two, three
+no numbers here, just text
+random, words, more, here

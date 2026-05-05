@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "segtic"
+version = "0.1.0"
+description = "Segment-based typed parsing of structured-but-loose strings — pydantic-style schema, dissect-style splitting."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Flummy1", email = "pieject9@gmail.com" }]
+keywords = ["parsing", "string", "dataclass", "schema", "dissect", "title"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Text Processing",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "mypy>=1.11",
+    "ruff>=0.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/Flummy1/segtic"
+Repository = "https://github.com/Flummy1/segtic"
+Issues = "https://github.com/Flummy1/segtic/issues"
+Changelog = "https://github.com/Flummy1/segtic/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["segtic"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["segtic"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
