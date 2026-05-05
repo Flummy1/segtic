@@ -1,7 +1,6 @@
 # segtic
 
-[![CI](https://github.com/Flummy1/segtic/actions/workflows/ci.yml/badge.svg)](https://github.com/Flummy1/segtic/actions/workflows/ci.yml)
-[![PyPI](https://img.shields.io/pypi/v/segtic)](https://pypi.org/project/segtic/)
+[![CI](https://github.com/Flummy1/segtic/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Flummy1/segtic/actions/workflows/ci.yml)
 
 > Segment-based typed parsing of structured-but-loose strings.
 > pydantic-style schema, dissect-style splitting.
